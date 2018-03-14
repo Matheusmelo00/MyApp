@@ -16,7 +16,11 @@ export class MovieProvider {
   }
 
   getLatestMovies(page = 1) {
-    return this.http.get(this.baseApiPath + "/movie/popular?api_key=01e5b4f0191f891a90ef6e509a2e1905");
+    return this.http.get(this.baseApiPath + `/movie/popular?page=${page}&api_key=01e5b4f0191f891a90ef6e509a2e1905`);
+  }
+
+  getMoviesDetails(filmeid) {
+    return this.http.get(this.baseApiPath + `/movie/${filmeid}?api_key=01e5b4f0191f891a90ef6e509a2e1905`);
   }
 
 }

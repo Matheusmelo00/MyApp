@@ -13,8 +13,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HttpModule } from "@angular/http"
 import { FeedPageModule } from '../pages/feed/feed.module';
 import { IntroPageModule } from '../pages/intro/intro.module';
-import { FeedPage } from '../pages/feed/feed';
 import { MovieProvider } from '../providers/movie/movie';
+import { FeedPage } from '../pages/feed/feed';
+import { ConfiguracoesPageModule } from '../pages/configuracoes/configuracoes.module';
+import { SobrePageModule } from '../pages/sobre/sobre.module';
+import { PerfilPageModule } from '../pages/perfil/perfil.module';
+import { FilmeDetalhesPageModule } from '../pages/filme-detalhes/filme-detalhes.module';
+import { CameraPageModule } from '../pages/camera/camera.module';
 
 @NgModule({
   declarations: [
@@ -22,14 +27,21 @@ import { MovieProvider } from '../providers/movie/movie';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    FeedPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    FeedPageModule,
+    // importando o modulo de feed
+    // FeedPageModule,
     IntroPageModule,
     HttpModule,
+    ConfiguracoesPageModule,
+    SobrePageModule,
+    PerfilPageModule,
+    FilmeDetalhesPageModule,
+    CameraPageModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,12 +49,14 @@ import { MovieProvider } from '../providers/movie/movie';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    FeedPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: ErrorHandler, useClass: IonicErrorHandler }
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    // MovieProvider
   ]
 })
 export class AppModule { }
