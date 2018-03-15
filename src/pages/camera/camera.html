@@ -7,12 +7,37 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>camera</ion-title>
+    <ion-title>Câmera</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
+  <ion-item>
+    <ion-label>Teste 1</ion-label>
+    <ion-toggle color="terceary"></ion-toggle>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Teste 2</ion-label>
+    <ion-toggle value="foo" checked="true"></ion-toggle>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Teste 3</ion-label>
+    <ion-toggle color="dark"></ion-toggle>
+  </ion-item>
 
+  <ion-item>
+    <ion-label>Teste 4</ion-label>
+    <ion-toggle color="secondary" checked="true"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Teste 5</ion-label>
+    <ion-toggle color="danger" checked="true"></ion-toggle>
+  </ion-item>
+
+  <img *ngIf="img" [src]="img" alt="">
+  <button ion-button block (click)="tirarFoto()">Tirar Foto</button>
 </ion-content>
